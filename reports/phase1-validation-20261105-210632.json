@@ -1,0 +1,101 @@
+{
+  "suite": "dev-v1",
+  "version": "1.0.0",
+  "oracle_runs": 10,
+  "tasks": [
+    "smoke-fix-calc",
+    "fix-interval-merge",
+    "fix-csv-fields",
+    "feature-toposort",
+    "feature-ttl-cache",
+    "fix-pagination",
+    "refactor-stable-groups",
+    "feature-json-merge",
+    "fix-retry-policy",
+    "feature-range-parser"
+  ],
+  "q5_satisfied": false,
+  "q6": "pending independent human review and approved harbor check",
+  "stages": [
+    {
+      "stage": "nop",
+      "job": "jobs/p1-20261105-210632-nop",
+      "counts": {
+        "feature-json-merge": 1,
+        "feature-range-parser": 1,
+        "feature-toposort": 1,
+        "feature-ttl-cache": 1,
+        "fix-csv-fields": 1,
+        "fix-interval-merge": 1,
+        "fix-pagination": 1,
+        "fix-retry-policy": 1,
+        "refactor-stable-groups": 1,
+        "smoke-fix-calc": 1
+      },
+      "checksums": {
+        "feature-json-merge": [
+          "8c485b9ffe13d7106c6ede4cb1fb125f0d659917ee729e2e7c6fa5302d6849fc"
+        ],
+        "feature-range-parser": [
+          "7ee0a3b2a79a4dfa50a635d5051ee12f1e5c3a38627976663ce0d749143b2e04"
+        ],
+        "feature-toposort": [
+          "5e3de147e490a4b79ced50b86923b5fe72856f070ff9ab1df260e0e5cb49748a"
+        ],
+        "feature-ttl-cache": [
+          "7c81d623f5e718207e2ebce3a1ea3aa893abb0c4bece1654fe4e4d5835aabd41"
+        ],
+        "fix-csv-fields": [
+          "71a6022f987a7f66cf24e393c5d81cf48822bc22cc0cb199426b81785157a68a"
+        ],
+        "fix-interval-merge": [
+          "21f4ef9563afbcc594a1ba2e35452184936aded2e6669d8fcc7ab757b80eb264"
+        ],
+        "fix-pagination": [
+          "91f611de63c88166a21e6295a65e3f475448adcdec8e5a4480802532219749b7"
+        ],
+        "fix-retry-policy": [
+          "d647d5c776b3b90aa6afd487c2f6d7b4be07f4f3ac29df12f8ca5a00e881bfd4"
+        ],
+        "refactor-stable-groups": [
+          "5d967726c8a0ca32da212aca73d7687274d136c67f907efec598f8b9db21226f"
+        ],
+        "smoke-fix-calc": [
+          "9c5e49bf6c8f219b66a285d6d2d78e1553543d6b4922d7aa9b04762ef45a56bd"
+        ]
+      },
+      "errors": [
+        "feature-json-merge__ejJsvCP: RewardFileNotFoundError",
+        "feature-json-merge__ejJsvCP: expected reward 0, got None",
+        "feature-json-merge__ejJsvCP: missing test report",
+        "feature-range-parser__yctTSKw: RewardFileNotFoundError",
+        "feature-range-parser__yctTSKw: expected reward 0, got None",
+        "feature-range-parser__yctTSKw: missing test report",
+        "feature-toposort__QTRdbVt: RewardFileNotFoundError",
+        "feature-toposort__QTRdbVt: expected reward 0, got None",
+        "feature-toposort__QTRdbVt: missing test report",
+        "feature-ttl-cache__7icy553: RewardFileNotFoundError",
+        "feature-ttl-cache__7icy553: expected reward 0, got None",
+        "feature-ttl-cache__7icy553: missing test report",
+        "fix-csv-fields__YZzfAta: RewardFileNotFoundError",
+        "fix-csv-fields__YZzfAta: expected reward 0, got None",
+        "fix-csv-fields__YZzfAta: missing test report",
+        "fix-interval-merge__DTg99gs: RewardFileNotFoundError",
+        "fix-interval-merge__DTg99gs: expected reward 0, got None",
+        "fix-interval-merge__DTg99gs: missing test report",
+        "fix-pagination__Xrw9TN7: RewardFileNotFoundError",
+        "fix-pagination__Xrw9TN7: expected reward 0, got None",
+        "fix-pagination__Xrw9TN7: missing test report",
+        "fix-retry-policy__FrA9tBt: RewardFileNotFoundError",
+        "fix-retry-policy__FrA9tBt: expected reward 0, got None",
+        "fix-retry-policy__FrA9tBt: missing test report",
+        "refactor-stable-groups__vwhSWzg: RewardFileNotFoundError",
+        "refactor-stable-groups__vwhSWzg: expected reward 0, got None",
+        "refactor-stable-groups__vwhSWzg: missing test report",
+        "smoke-fix-calc__dztjDX2: RewardFileNotFoundError",
+        "smoke-fix-calc__dztjDX2: expected reward 0, got None",
+        "smoke-fix-calc__dztjDX2: missing test report"
+      ]
+    }
+  ]
+}

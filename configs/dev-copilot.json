@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "suite": "suites/dev-v1.json",
+  "agent": "copilot-host",
+  "model": "claude-haiku-4.5",
+  "attempts": 1,
+  "concurrency": 1
+}

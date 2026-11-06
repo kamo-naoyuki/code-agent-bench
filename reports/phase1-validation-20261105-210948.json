@@ -1,0 +1,52 @@
+{
+  "suite": "dev-v1",
+  "version": "1.0.0",
+  "snapshot": "jobs/p1-20261105-210948-inputs",
+  "oracle_runs": 1,
+  "tasks": [
+    "smoke-fix-calc"
+  ],
+  "q5_satisfied": false,
+  "q6": "pending independent human review and approved harbor check",
+  "stages": [
+    {
+      "stage": "nop",
+      "job": "jobs/p1-20261105-210948-nop",
+      "counts": {
+        "smoke-fix-calc": 1
+      },
+      "checksums": {
+        "smoke-fix-calc": [
+          "15c608428113cc0bae72116b97916ba7948fc68e1df27620a73cca37e275027e"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "stage": "alternative",
+      "job": "jobs/p1-20261105-210948-alternative",
+      "counts": {
+        "smoke-fix-calc": 1
+      },
+      "checksums": {
+        "smoke-fix-calc": [
+          "15c608428113cc0bae72116b97916ba7948fc68e1df27620a73cca37e275027e"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "stage": "oracle",
+      "job": "jobs/p1-20261105-210948-oracle",
+      "counts": {
+        "smoke-fix-calc": 1
+      },
+      "checksums": {
+        "smoke-fix-calc": [
+          "15c608428113cc0bae72116b97916ba7948fc68e1df27620a73cca37e275027e"
+        ]
+      },
+      "errors": []
+    }
+  ]
+}

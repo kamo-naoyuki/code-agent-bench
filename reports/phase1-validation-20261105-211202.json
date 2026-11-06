@@ -1,0 +1,169 @@
+{
+  "suite": "dev-v1",
+  "version": "1.0.0",
+  "snapshot": "jobs/p1-20261105-211202-inputs",
+  "oracle_runs": 10,
+  "tasks": [
+    "smoke-fix-calc",
+    "fix-interval-merge",
+    "fix-csv-fields",
+    "feature-toposort",
+    "feature-ttl-cache",
+    "fix-pagination",
+    "refactor-stable-groups",
+    "feature-json-merge",
+    "fix-retry-policy",
+    "feature-range-parser"
+  ],
+  "q5_satisfied": true,
+  "q6": "pending independent human review and approved harbor check",
+  "stages": [
+    {
+      "stage": "nop",
+      "job": "jobs/p1-20261105-211202-nop",
+      "counts": {
+        "feature-json-merge": 1,
+        "feature-range-parser": 1,
+        "feature-toposort": 1,
+        "feature-ttl-cache": 1,
+        "fix-csv-fields": 1,
+        "fix-interval-merge": 1,
+        "fix-pagination": 1,
+        "fix-retry-policy": 1,
+        "refactor-stable-groups": 1,
+        "smoke-fix-calc": 1
+      },
+      "checksums": {
+        "feature-json-merge": [
+          "c5849d4e70de4c30338ad4c0e618a3a2ca6d36350d08e57ac3540c112c7cb785"
+        ],
+        "feature-range-parser": [
+          "d355aff1854e4de8258c31be1d4c13fd0a686f71c3f194461837e7149af69df7"
+        ],
+        "feature-toposort": [
+          "9c24f355f12a4f4c9df0c78dd12856efcd4d529a60d717d450ad9340178c3b04"
+        ],
+        "feature-ttl-cache": [
+          "6bc906a8e35d52260a6f89dc6ca5a213176db57b6cff8e2659924fa180f3754a"
+        ],
+        "fix-csv-fields": [
+          "383474acc12362688def37a241d101e635e38f007dfa46eb132be30f821e9a8b"
+        ],
+        "fix-interval-merge": [
+          "f73841168d20d654d60560d6d86263babbdf4a733ef5052cdcda69b778f58f2d"
+        ],
+        "fix-pagination": [
+          "04a99e3234afc256a52c9ffc9ae4a4a3308408ca6b72ada0e3cd4879d5e5a46c"
+        ],
+        "fix-retry-policy": [
+          "796ee1992ce54bbb9e124fd7335457a8ce18e2c9e1f3e3a533716517c0ec65ab"
+        ],
+        "refactor-stable-groups": [
+          "40518beeca7c4aa23cbeec5d52018f73ad74905385899f1476146e023ab17401"
+        ],
+        "smoke-fix-calc": [
+          "15c608428113cc0bae72116b97916ba7948fc68e1df27620a73cca37e275027e"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "stage": "alternative",
+      "job": "jobs/p1-20261105-211202-alternative",
+      "counts": {
+        "feature-json-merge": 1,
+        "feature-range-parser": 1,
+        "feature-toposort": 1,
+        "feature-ttl-cache": 1,
+        "fix-csv-fields": 1,
+        "fix-interval-merge": 1,
+        "fix-pagination": 1,
+        "fix-retry-policy": 1,
+        "refactor-stable-groups": 1,
+        "smoke-fix-calc": 1
+      },
+      "checksums": {
+        "feature-json-merge": [
+          "c5849d4e70de4c30338ad4c0e618a3a2ca6d36350d08e57ac3540c112c7cb785"
+        ],
+        "feature-range-parser": [
+          "d355aff1854e4de8258c31be1d4c13fd0a686f71c3f194461837e7149af69df7"
+        ],
+        "feature-toposort": [
+          "9c24f355f12a4f4c9df0c78dd12856efcd4d529a60d717d450ad9340178c3b04"
+        ],
+        "feature-ttl-cache": [
+          "6bc906a8e35d52260a6f89dc6ca5a213176db57b6cff8e2659924fa180f3754a"
+        ],
+        "fix-csv-fields": [
+          "383474acc12362688def37a241d101e635e38f007dfa46eb132be30f821e9a8b"
+        ],
+        "fix-interval-merge": [
+          "f73841168d20d654d60560d6d86263babbdf4a733ef5052cdcda69b778f58f2d"
+        ],
+        "fix-pagination": [
+          "04a99e3234afc256a52c9ffc9ae4a4a3308408ca6b72ada0e3cd4879d5e5a46c"
+        ],
+        "fix-retry-policy": [
+          "796ee1992ce54bbb9e124fd7335457a8ce18e2c9e1f3e3a533716517c0ec65ab"
+        ],
+        "refactor-stable-groups": [
+          "40518beeca7c4aa23cbeec5d52018f73ad74905385899f1476146e023ab17401"
+        ],
+        "smoke-fix-calc": [
+          "15c608428113cc0bae72116b97916ba7948fc68e1df27620a73cca37e275027e"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "stage": "oracle",
+      "job": "jobs/p1-20261105-211202-oracle",
+      "counts": {
+        "feature-json-merge": 10,
+        "feature-range-parser": 10,
+        "feature-toposort": 10,
+        "feature-ttl-cache": 10,
+        "fix-csv-fields": 10,
+        "fix-interval-merge": 10,
+        "fix-pagination": 10,
+        "fix-retry-policy": 10,
+        "refactor-stable-groups": 10,
+        "smoke-fix-calc": 10
+      },
+      "checksums": {
+        "feature-json-merge": [
+          "c5849d4e70de4c30338ad4c0e618a3a2ca6d36350d08e57ac3540c112c7cb785"
+        ],
+        "feature-range-parser": [
+          "d355aff1854e4de8258c31be1d4c13fd0a686f71c3f194461837e7149af69df7"
+        ],
+        "feature-toposort": [
+          "9c24f355f12a4f4c9df0c78dd12856efcd4d529a60d717d450ad9340178c3b04"
+        ],
+        "feature-ttl-cache": [
+          "6bc906a8e35d52260a6f89dc6ca5a213176db57b6cff8e2659924fa180f3754a"
+        ],
+        "fix-csv-fields": [
+          "383474acc12362688def37a241d101e635e38f007dfa46eb132be30f821e9a8b"
+        ],
+        "fix-interval-merge": [
+          "f73841168d20d654d60560d6d86263babbdf4a733ef5052cdcda69b778f58f2d"
+        ],
+        "fix-pagination": [
+          "04a99e3234afc256a52c9ffc9ae4a4a3308408ca6b72ada0e3cd4879d5e5a46c"
+        ],
+        "fix-retry-policy": [
+          "796ee1992ce54bbb9e124fd7335457a8ce18e2c9e1f3e3a533716517c0ec65ab"
+        ],
+        "refactor-stable-groups": [
+          "40518beeca7c4aa23cbeec5d52018f73ad74905385899f1476146e023ab17401"
+        ],
+        "smoke-fix-calc": [
+          "15c608428113cc0bae72116b97916ba7948fc68e1df27620a73cca37e275027e"
+        ]
+      },
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# mini-swe-agent settings shared by all models in Phase 0 (PLAN.md 6.1: common budget limits).
+# Harbor's mini-swe-agent defaults are step_limit=0 / cost_limit=0 / wall_time_limit_seconds=0,
+# i.e. NO limit at all (verified in Phase 0), so these must always be passed via
+#   --ak config_file=configs/phase0-mini-swe-agent.yaml --ak cost_limit=<USD per trial>
+# cost_limit only works for models with a known price; for unpriced models (local inference,
+# mock) cost is recorded as 0 and only step_limit / wall_time_limit_seconds can stop a run.
+agent:
+  step_limit: 50
+  wall_time_limit_seconds: 1200

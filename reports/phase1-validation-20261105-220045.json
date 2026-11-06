@@ -1,0 +1,104 @@
+{
+  "suite": "dev-v1",
+  "version": "1.1.0",
+  "snapshot": "jobs/p1-20261105-220045-inputs",
+  "oracle_runs": 10,
+  "tasks": [
+    "smoke-fix-calc",
+    "fix-csv-fields",
+    "feature-ttl-cache",
+    "fix-pagination",
+    "feature-json-merge"
+  ],
+  "q5_satisfied": true,
+  "q6": "pending independent human review and approved harbor check",
+  "stages": [
+    {
+      "stage": "nop",
+      "job": "jobs/p1-20261105-220045-nop",
+      "counts": {
+        "feature-json-merge": 1,
+        "feature-ttl-cache": 1,
+        "fix-csv-fields": 1,
+        "fix-pagination": 1,
+        "smoke-fix-calc": 1
+      },
+      "checksums": {
+        "feature-json-merge": [
+          "b8b6e8013c93390c66203ee8dded6c77cdc9ded65d3100fd063f1b015be6f5e5"
+        ],
+        "feature-ttl-cache": [
+          "ff6ae696ef3d9b225ebbd1fa67d42c438d4ac4fd377b0a3909b7c2271e50837a"
+        ],
+        "fix-csv-fields": [
+          "742221631ded7d66098ac201320c886cb775f940afc280ce8e3af480b7fca7a9"
+        ],
+        "fix-pagination": [
+          "6c614dc1d4e809e353e311866335f69578bcb4e2924a7dffe62accde21ea6712"
+        ],
+        "smoke-fix-calc": [
+          "bdb4d557b12daa947314ef0e62af2776c40544d075c4b918924a06f6edc7ffb6"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "stage": "alternative",
+      "job": "jobs/p1-20261105-220045-alternative",
+      "counts": {
+        "feature-json-merge": 1,
+        "feature-ttl-cache": 1,
+        "fix-csv-fields": 1,
+        "fix-pagination": 1,
+        "smoke-fix-calc": 1
+      },
+      "checksums": {
+        "feature-json-merge": [
+          "b8b6e8013c93390c66203ee8dded6c77cdc9ded65d3100fd063f1b015be6f5e5"
+        ],
+        "feature-ttl-cache": [
+          "ff6ae696ef3d9b225ebbd1fa67d42c438d4ac4fd377b0a3909b7c2271e50837a"
+        ],
+        "fix-csv-fields": [
+          "742221631ded7d66098ac201320c886cb775f940afc280ce8e3af480b7fca7a9"
+        ],
+        "fix-pagination": [
+          "6c614dc1d4e809e353e311866335f69578bcb4e2924a7dffe62accde21ea6712"
+        ],
+        "smoke-fix-calc": [
+          "bdb4d557b12daa947314ef0e62af2776c40544d075c4b918924a06f6edc7ffb6"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "stage": "oracle",
+      "job": "jobs/p1-20261105-220045-oracle",
+      "counts": {
+        "feature-json-merge": 10,
+        "feature-ttl-cache": 10,
+        "fix-csv-fields": 10,
+        "fix-pagination": 10,
+        "smoke-fix-calc": 10
+      },
+      "checksums": {
+        "feature-json-merge": [
+          "b8b6e8013c93390c66203ee8dded6c77cdc9ded65d3100fd063f1b015be6f5e5"
+        ],
+        "feature-ttl-cache": [
+          "ff6ae696ef3d9b225ebbd1fa67d42c438d4ac4fd377b0a3909b7c2271e50837a"
+        ],
+        "fix-csv-fields": [
+          "742221631ded7d66098ac201320c886cb775f940afc280ce8e3af480b7fca7a9"
+        ],
+        "fix-pagination": [
+          "6c614dc1d4e809e353e311866335f69578bcb4e2924a7dffe62accde21ea6712"
+        ],
+        "smoke-fix-calc": [
+          "bdb4d557b12daa947314ef0e62af2776c40544d075c4b918924a06f6edc7ffb6"
+        ]
+      },
+      "errors": []
+    }
+  ]
+}

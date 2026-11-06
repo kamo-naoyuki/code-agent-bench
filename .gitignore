@@ -1,0 +1,21 @@
+# Run results (large, may contain trajectories with private code) -- see PLAN.md 4.4 / 8.3
+jobs/
+*.duckdb
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Private evaluation data (heldout tasks/solutions live in a private repository, PLAN.md 5.4)
+tasks/heldout/
+
+# Scratch
+tmp/

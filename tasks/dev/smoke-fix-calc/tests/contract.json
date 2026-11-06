@@ -1,0 +1,8 @@
+{
+  "allowed_files": [
+    "calc.py",
+    "helpers.py",
+    "helpers_old.py",
+    "legacy_calc.py"
+  ]
+}

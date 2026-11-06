@@ -1,0 +1,10 @@
+job                        task                               model          rew  exception               in    out  cache        $  prem  setup  agent  verif  total
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+p0c-step4-20261105-1758-a  gpt2-codegolf                      claude-haiku-4 0.0  -                  1148841  27082 1100300        -  0.33      0    322     32    367
+p0c-step4-20261105-1758-a  gpt2-codegolf                      claude-haiku-4 0.0  -                   649206  19270 602078        -  0.33      0    235     44    292
+p0c-step4-20261105-1758-b  gpt2-codegolf                      claude-sonnet- 0.0  -                    68633   8623  54818        -  1.00      0     89     39    141
+p0c-step4-20261105-1758-b  gpt2-codegolf                      claude-sonnet- 1.0  -                    51164   7919  40000        -  1.00      0     87     34    133
+
+per (job, model): n | mean reward | mean $/trial | total premium requests | mean total s/trial | sum tokens in/out/cache
+  p0c-step4-20261105-1758-a  claude-haiku-4 n=2 reward=0.00 $=- premium=0.66 sec=330 tokens=1798047/46352/1702378
+  p0c-step4-20261105-1758-b  claude-sonnet- n=2 reward=0.50 $=- premium=2.00 sec=137 tokens=119797/16542/94818

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "suite": "suites/dev-v1.json",
+  "agent": "nop",
+  "attempts": 1,
+  "concurrency": 3
+}

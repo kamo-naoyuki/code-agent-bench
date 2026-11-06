@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+source bench/env.sh
+HARBOR_PY="$(dirname "$(readlink -f "$(command -v harbor)")")/python"
+exec "$HARBOR_PY" bench/taskkit/validate_tasks.py "$@"

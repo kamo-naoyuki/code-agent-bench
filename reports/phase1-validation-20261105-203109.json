@@ -1,0 +1,74 @@
+{
+  "suite": "dev-v1",
+  "version": "1.0.0",
+  "oracle_runs": 10,
+  "tasks": [
+    "smoke-fix-calc",
+    "fix-interval-merge",
+    "fix-csv-fields",
+    "feature-toposort",
+    "feature-ttl-cache",
+    "fix-pagination",
+    "refactor-stable-groups",
+    "feature-json-merge",
+    "fix-retry-policy",
+    "feature-range-parser"
+  ],
+  "q5_satisfied": false,
+  "validation_status": "superseded",
+  "superseded_reason": "All rewards matched expectations, but Python bytecode cleanup changed task checksums within the run. Replaced by immutable-snapshot validation; do not use this run as Q5 evidence.",
+  "q6": "pending independent human review and approved harbor check",
+  "stages": [
+    {
+      "stage": "nop",
+      "job": "jobs/p1-20261105-203109-nop",
+      "counts": {
+        "feature-json-merge": 1,
+        "feature-range-parser": 1,
+        "feature-toposort": 1,
+        "feature-ttl-cache": 1,
+        "fix-csv-fields": 1,
+        "fix-interval-merge": 1,
+        "fix-pagination": 1,
+        "fix-retry-policy": 1,
+        "refactor-stable-groups": 1,
+        "smoke-fix-calc": 1
+      },
+      "errors": []
+    },
+    {
+      "stage": "alternative",
+      "job": "jobs/p1-20261105-203109-alternative",
+      "counts": {
+        "feature-json-merge": 1,
+        "feature-range-parser": 1,
+        "feature-toposort": 1,
+        "feature-ttl-cache": 1,
+        "fix-csv-fields": 1,
+        "fix-interval-merge": 1,
+        "fix-pagination": 1,
+        "fix-retry-policy": 1,
+        "refactor-stable-groups": 1,
+        "smoke-fix-calc": 1
+      },
+      "errors": []
+    },
+    {
+      "stage": "oracle",
+      "job": "jobs/p1-20261105-203109-oracle",
+      "counts": {
+        "feature-json-merge": 10,
+        "feature-range-parser": 10,
+        "feature-toposort": 10,
+        "feature-ttl-cache": 10,
+        "fix-csv-fields": 10,
+        "fix-interval-merge": 10,
+        "fix-pagination": 10,
+        "fix-retry-policy": 10,
+        "refactor-stable-groups": 10,
+        "smoke-fix-calc": 10
+      },
+      "errors": []
+    }
+  ]
+}

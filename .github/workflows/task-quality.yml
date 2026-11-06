@@ -1,0 +1,61 @@
+name: Task quality (no model calls)
+on:
+  push:
+    paths:
+      - "tasks/**"
+      - "bench/taskkit/**"
+      - "bench/validate-tasks"
+      - "bench/run"
+      - "bench/pipeline.py"
+      - "bench/tests/**"
+      - "configs/dev-*.json"
+      - "suites/dev-v1.json"
+      - ".github/workflows/task-quality.yml"
+  pull_request:
+    paths:
+      - "tasks/**"
+      - "bench/taskkit/**"
+      - "bench/validate-tasks"
+      - "bench/run"
+      - "bench/pipeline.py"
+      - "bench/tests/**"
+      - "configs/dev-*.json"
+      - "suites/dev-v1.json"
+      - ".github/workflows/task-quality.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      HARBOR_TELEMETRY: "off"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          python -m pip install uv==0.13.4
+          uv tool install harbor==0.25.0 --python 3.12
+      - name: Unit tests and shell syntax
+        run: |
+          python -m unittest discover -s bench/taskkit/tests -v
+          HARBOR_PY="$(dirname "$(readlink -f "$(command -v harbor)")")/python"
+          "$HARBOR_PY" -m unittest discover -s bench/tests -v
+          bash -n bench/run bench/validate-tasks bench/taskkit/export_source.sh
+      - name: Q1-Q5 (120 fresh trials)
+        run: bash bench/validate-tasks --oracle-runs 10 --concurrency 3
+      - name: Pipeline interruption and resume (oracle/nop only)
+        run: |
+          HARBOR_PY="$(dirname "$(readlink -f "$(command -v harbor)")")/python"
+          "$HARBOR_PY" bench/tests/e2e_pipeline.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: task-quality-results
+          path: |
+            reports/phase1-validation-*.json
+            jobs/p1-*
+            jobs/p2-*

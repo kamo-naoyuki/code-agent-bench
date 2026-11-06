@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+source bench/env.sh
+export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
+HARBOR_PY="$(dirname "$(readlink -f "$(command -v harbor)")")/python"
+exec "$HARBOR_PY" -m bench.pipeline "$@"

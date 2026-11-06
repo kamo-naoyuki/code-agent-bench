@@ -1,0 +1,34 @@
+collected_at: 2026-11-05T17:25:44+09:00
+git_sha: n/a (not a git repository)
+host: ttgh4 | Linux 6.8.0-138-generic | Ubuntu 22.04.2 LTS
+cpus: 12 | mem: 62GiB
+user: kamo | groups: kishin docker
+
+== Docker
+client=29.1.3 server=29.1.3 api=1.52
+Docker Compose version v5.6.1
+github.com/docker/buildx v0.38.1 0dbe87f36ed472fe36b6796c3f70b4210a731fc5
+storage_driver=overlayfs cgroup=2 root=/var/lib/docker daemon_proxy=http://proxy-u.ecl.ntt.co.jp:8080
+cli-plugins (user): docker-buildx docker-compose
+
+== Harbor / Python
+0.25.0
+uv 0.13.4 (x86_64-unknown-linux-gnu)
+harbor v0.25.0
+Python 3.12.15
+
+== Copilot CLI (host agent route; the login itself is never read or printed)
+GitHub Copilot CLI 1.0.96.
+COPILOT_HOME=/home/kamo/.copilot
+
+== Network facts
+shell proxy host : proxy-k.ecl.ntt.co.jp
+docker-config proxy host: proxy-u.ecl.ntt.co.jp
+HARBOR_TELEMETRY=off
+
+== Images used (digest-pinned in tasks)
+python:<none> sha256:b18b261e1b4974b4f321451ad5251ded85abb22c2b8b262da527dda1d031ab30
+ubuntu:24.04 sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
+alexgshaw/break-filter-js-from-html:20251031 sha256:d7bfb45e47cf10d2e21dc520239215498f4eba9c1ab2d0cd7d647985dddb4fa8
+alexgshaw/llm-inference-batching-scheduler:20251031 sha256:19e79aa49be4e55dccca1dde966515ebe6852314b6010bcb9230afb48b996774
+alexgshaw/gpt2-codegolf:20251031 sha256:537e7bd26b02db5c761230515fa09dc05f89403c6737fbdae4b5793ebc2c7066

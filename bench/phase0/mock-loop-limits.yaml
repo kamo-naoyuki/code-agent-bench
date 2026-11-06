@@ -1,0 +1,5 @@
+# Deliberately tiny limits for the mock "never submits" model (mock-loop): used to verify that
+# step_limit is honoured and how Harbor records a run that stopped on a budget limit.
+agent:
+  step_limit: 3
+  wall_time_limit_seconds: 300

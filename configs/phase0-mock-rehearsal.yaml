@@ -1,0 +1,44 @@
+# Phase 0 rehearsal of PLAN.md Step 4 / G2 / G3 / G7 with the scripted mock LLM.
+# NOT a model evaluation: it only checks the plumbing (Harbor -> mini-swe-agent -> --base-url ->
+# result.json / ATIF trajectory / usage -> verifier -> viewer).
+#
+# Prerequisite (host side):  python3 bench/phase0/mock_llm_server.py --log /tmp/mock_llm.jsonl
+# Run from the repository root:
+#   source bench/env.sh
+#   OPENAI_API_KEY=dummy-key-for-mock harbor run -c configs/phase0-mock-rehearsal.yaml
+job_name: p0-mock-rehearsal
+n_attempts: 2
+n_concurrent_trials: 4
+
+tasks:
+  - path: tasks/dev/smoke-fix-calc      # private-style task: non-root agent, allowlist, separate verifier
+  - name: hello-world/hello-world       # public registry task: root agent, shared verifier
+
+agents:
+  - &agent
+    name: mini-swe-agent
+    model_name: openai/mock-solver
+    base_url: http://172.17.0.1:18080/v1   # docker0 gateway; auto-allowlisted under [agent] network_mode=allowlist
+    # Required: Harbor ignores --base-url when config_file / litellm_model_registry is set
+    # unless the API format is given explicitly ("doesn't support --base-url overrides").
+    model_api_format: openai_chat_completions
+    kwargs:
+      cost_limit: "0.5"                     # USD per trial; Harbor's default "0" means unlimited
+      config_file: configs/phase0-mini-swe-agent.yaml   # step_limit / wall_time_limit_seconds
+      litellm_model_registry:               # gives the mock a price so the cost path is exercised
+        openai/mock-solver: &price
+          litellm_provider: openai
+          mode: chat
+          max_tokens: 8192
+          max_input_tokens: 128000
+          max_output_tokens: 8192
+          input_cost_per_token: 0.000001
+          output_cost_per_token: 0.000002
+        openai/mock-lazy: *price
+    env:
+      NO_PROXY: 172.17.0.1                  # do not send host-local traffic to the corporate proxy
+      no_proxy: 172.17.0.1
+      UV_EXCLUDE_NEWER: "2026-10-15T00:00:00Z"   # workaround: litellm>=1.106 needs `mcp` (see reports/phase0.md)
+      LITELLM_LOCAL_MODEL_COST_MAP: "True"
+  - <<: *agent
+    model_name: openai/mock-lazy

@@ -1,0 +1,16 @@
+{
+  "name": "dev-v1",
+  "version": "1.1.0",
+  "tasks": [
+    {"name": "smoke-fix-calc", "category": "bugfix", "allowed_files": ["calc.py", "helpers.py", "helpers_old.py", "legacy_calc.py"]},
+    {"name": "fix-interval-merge", "category": "bugfix", "module": "intervals.py"},
+    {"name": "fix-csv-fields", "category": "bugfix", "module": "csv_fields.py", "version": "1.1.0"},
+    {"name": "feature-toposort", "category": "feature", "module": "dependencies.py"},
+    {"name": "feature-ttl-cache", "category": "feature", "module": "cache.py", "version": "1.1.0"},
+    {"name": "fix-pagination", "category": "bugfix", "module": "pagination.py", "version": "1.1.0"},
+    {"name": "refactor-stable-groups", "category": "refactor", "module": "grouping.py"},
+    {"name": "feature-json-merge", "category": "feature", "module": "merge.py", "version": "1.1.0"},
+    {"name": "fix-retry-policy", "category": "bugfix", "module": "retry.py"},
+    {"name": "feature-range-parser", "category": "feature", "module": "ranges.py"}
+  ]
+}
