@@ -22,6 +22,21 @@ def copy_task(source: Path, destination: Path) -> None:
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 
 
+def create_task_snapshot(root: Path, names: list[str], stamp: str) -> Path:
+    snapshot = root / "jobs" / f"p1-{stamp}-inputs"
+    snapshot.mkdir(parents=True, exist_ok=False)
+    for name in names:
+        copy_task(root / "tasks/dev" / name, snapshot / name)
+    return snapshot
+
+
+def display_job_path(job: Path) -> str:
+    try:
+        return str(job.relative_to(ROOT))
+    except ValueError:
+        return str(job)
+
+
 def check_job(job: Path, names: list[str], attempts: int, reward: int) -> dict:
     counts: Counter[str] = Counter()
     checksums: dict[str, set[str]] = defaultdict(set)
@@ -61,7 +76,7 @@ def check_job(job: Path, names: list[str], attempts: int, reward: int) -> dict:
     for name, hashes in checksums.items():
         if len(hashes) != 1:
             errors.append(f"{name}: task checksum changed during validation")
-    return {"job": str(job.relative_to(ROOT)), "counts": dict(counts),
+    return {"job": display_job_path(job), "counts": dict(counts),
             "checksums": {name: sorted(hashes) for name, hashes in checksums.items()},
             "errors": errors}
 
@@ -94,9 +109,7 @@ def main() -> int:
     if args.static_only:
         return 0
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    snapshot = ROOT / "jobs" / f"p1-{stamp}-inputs"
-    for name in names:
-        copy_task(ROOT / "tasks/dev" / name, snapshot / name)
+    snapshot = create_task_snapshot(ROOT, names, stamp)
     reports = []
     stages = [
         ("nop", "nop", 1, 0, {}),

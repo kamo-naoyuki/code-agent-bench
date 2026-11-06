@@ -12,6 +12,17 @@ spec.loader.exec_module(validate)
 
 
 class ValidationTests(unittest.TestCase):
+    def test_snapshot_creation_makes_jobs_parent_in_clean_checkout(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            task = root / "tasks/dev/example"
+            task.mkdir(parents=True)
+            (task / "task.toml").write_text("version = 1")
+            snapshot = validate.create_task_snapshot(root, ["example"], "stamp")
+            self.assertEqual((snapshot / "example/task.toml").read_text(), "version = 1")
+            self.assertTrue((root / "jobs").is_dir())
+            self.assertEqual(snapshot.parent, root / "jobs")
+
     def test_snapshot_ignores_cache_changes_and_keeps_source_frozen(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -29,7 +40,7 @@ class ValidationTests(unittest.TestCase):
             self.assertEqual((root / "first/code.py").read_text(), "value = 1")
 
     def test_incomplete_or_broken_trials_cannot_pass(self):
-        with tempfile.TemporaryDirectory(dir=ROOT / "jobs", prefix="quality-unit-") as tmp:
+        with tempfile.TemporaryDirectory(prefix="quality-unit-") as tmp:
             job = Path(tmp)
             self.assertTrue(validate.check_job(job, ["example"], 1, 1)["errors"])
             trial = job / "trial"
@@ -49,7 +60,7 @@ class ValidationTests(unittest.TestCase):
             self.assertTrue(validate.check_job(job, ["example"], 1, 1)["errors"])
 
     def test_nop_requires_failed_tests_and_exact_trial_count(self):
-        with tempfile.TemporaryDirectory(dir=ROOT / "jobs", prefix="quality-unit-") as tmp:
+        with tempfile.TemporaryDirectory(prefix="quality-unit-") as tmp:
             job = Path(tmp)
             trial = job / "trial"
             (trial / "verifier").mkdir(parents=True)
@@ -69,7 +80,7 @@ class ValidationTests(unittest.TestCase):
             self.assertTrue(validate.check_job(job, ["example"], 2, 0)["errors"])
 
     def test_different_snapshots_are_rejected(self):
-        with tempfile.TemporaryDirectory(dir=ROOT / "jobs", prefix="quality-unit-") as tmp:
+        with tempfile.TemporaryDirectory(prefix="quality-unit-") as tmp:
             job = Path(tmp)
             for index in range(2):
                 trial = job / str(index)
